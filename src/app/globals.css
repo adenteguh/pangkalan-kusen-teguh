@@ -1,0 +1,43 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-wood: #8B5E3C;
+  --color-wood-dark: #6D482E;
+  --color-dark: #1F1F1F;
+  --color-light: #F5F5F5;
+  --font-sans: var(--font-poppins);
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #1F1F1F;
+  --card-bg: #ffffff;
+  --card-border: #e5e5e5;
+  --muted: #6b7280;
+}
+
+.dark {
+  --background: #121212;
+  --foreground: #F5F5F5;
+  --card-bg: #1F1F1F;
+  --card-border: #333333;
+  --muted: #9ca3af;
+}
+
+@layer base {
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-white/70 backdrop-blur-md border border-white/20 dark:bg-dark/70 dark:border-white/10;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
